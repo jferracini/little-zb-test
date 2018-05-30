@@ -19,12 +19,13 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
+              "src/assets/ico/favicon.ico",
               "src/assets"
             ],
             "styles": [
               "node_modules/font-awesome/css/font-awesome.css",
               "node_modules/npm-font-open-sans/open-sans.css",
+              "node_modules/animate.css/animate.css",
               "src/styles.scss"
             ],
             "scripts": []
