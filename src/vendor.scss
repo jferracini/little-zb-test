@@ -10,6 +10,8 @@ $lb-dark-grey: #474c55;
 h1 { font-size: 2.0875rem }
 h2 { font-size: 1.45rem }
 h3 { font-size: 1.25rem }
+h4 { font-size: 1.10rem }
+h5 { font-size: 0.9rem }
 
 /* Layout - General classes */
 
@@ -28,6 +30,17 @@ nav.navbar {
     height: 110px;
     .container {
         padding: 25px 0 35px 0;
+    }
+}
+
+footer {
+    a {
+      color: $off-white;
+      font-size: 1.0rem;
+      line-height: 1.8rem;
+    }
+    ul li, address {
+        font-weight: 100;
     }
 }
 
