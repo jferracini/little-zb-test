@@ -10,42 +10,16 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class AppWidgetDonationComponent implements OnInit {
 
+  imgSrc = {'background-image': 'url(\'assets/giraffe-image.jpg\')'};
   name = 'Widget Donate';
+
   animals = [
        {id: 1, value: "giraffe" , name: "A giraffe"},
        {id: 2, value: "rhino", name: "A rhino"},
        {id:3, value: "tiger", name: "A tiger"},
      ];
-  form: FormGroup;
 
-  allBg(fotoSet) {
-    let myStyles;
-    if(fotoSet == 'giraffe') {  	  
-      myStyles = {
-      'background-image': !this.animals ? 'url(\'assets/giraffe-image.jpg\')' : 'url(\'assets/giraffe-image.jpg\')',
-    };
-    } else if(fotoSet == 'rhino') {
-      myStyles = {
-        'background-image': !this.animals ? 'url(\'assets/rhino-image.jpg\')' : 'url(\'assets/rhino-image.jpg\')',
-      };
-    } else if(fotoSet == 'tiger') {
-      myStyles = {
-        'background-image': !this.animals ? 'url(\'assets/tiger-image.jpg\')' : 'url(\'assets/tiger-image.jpg\')',
-      };
-    } else {
-      myStyles = {
-        'background-image': !this.animals ? 'url(\'assets/giraffe-image.jpg\')' : 'url(\'assets/giraffe-image.jpg\')',
-      };
-    }
-    return myStyles;
-    }
-  
-//   getMyStyles() {
-//     let myStyles = {
-//        'background-image': !this.animals ? 'url(\'assets/giraffe-image.jpg\')' : 'url(\'assets/giraffe-image.jpg\')',
-//     };
-//     return myStyles;
-// }  
+  form: FormGroup;
 
   constructor() {
     this.form = new FormGroup({
@@ -53,11 +27,31 @@ export class AppWidgetDonationComponent implements OnInit {
     })
   }
 
+
   get animal(): string {
     return this.form ? this.form.get('animal').value : '';
   }
 
   ngOnInit() {
+  }
+
+  public changeImg(value){
+    console.log(value);
+    if (value == '1') {
+      this.imgSrc = {
+        'background-image': !this.animals ? 'url(\'assets/giraffe-image.jpg\')' : 'url(\'assets/giraffe-image.jpg\')',
+      };
+    }
+    else if (value == '2') {
+      this.imgSrc = {
+        'background-image': !this.animals ? 'url(\'assets/rhino-image.jpg\')' : 'url(\'assets/rhino-image.jpg\')',
+      };
+    }
+    else if (value == '3') {
+      this.imgSrc = {
+        'background-image': !this.animals ? 'url(\'assets/tiger-image.jpg\')' : 'url(\'assets/tiger-image.jpg\')',
+      };
+    }
   }
 
 }

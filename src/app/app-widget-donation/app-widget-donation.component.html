@@ -1,9 +1,10 @@
-<div class="d-flex justify-content-between">
+<form class="text-left" [formGroup]="form">
+        
+    <div class="d-flex justify-content-between">
 
     <div class="form-donate my-5">
         <h2 class="text-uppercase">Make a Donation</h2>
 
-        <form class="text-left" [formGroup]="form">
 
             <div class="form-group row p-5">
 
@@ -11,9 +12,11 @@
 
               <div class="col-md-9 col-sm-12">
                 
-                    <select class="form-control select-lg" formControlName="animal">
-                        <option *ngFor="let animal of animals" [ngValue]="animal">{{animal.name}}</option>
+                    <select class="form-control select-lg" formControlName="animal" (change)="changeImg($event.target.value)">
+                        <option [selected]="true" disabled>Select animal...</option>
+                        <option *ngFor="let animal of animals; let i = index" [value]="animal.id">{{animal.name}}</option>
                     </select>
+                    
               </div>
 
               <p>Selected Animal: {{animal?.name}}</p>
@@ -42,7 +45,7 @@
                           <span class="pl-2 w-100">or</span>
                       </li>
                       <li class="list-inline-item float-right">
-                          <input class="form-control input-donate" type="text" placeholder="£11" aria-label="My donate!">
+                          <input id="custom" name="" class="form-control input-donate" type="text" placeholder="£" aria-label="My donate!">
                       </li>
                   </ul>
     
@@ -60,15 +63,17 @@
 
             </div>
 
-        </form>
 
     </div>
 
     <div class="p-0 bd-highlight d-flex flex-row-reverse">
         <!-- <img  class="img-option p-2" src="assets/giraffe-image.jpg"> -->
 
-        <div class="p-2 img-option"  [ngStyle]="allBg()"></div>
-        <!-- <div class="p-2 img-option"  [ngStyle]="{'background-image': 'url(assets/'+ animals.name +')'}"></div> -->
+        <div id="photo" class="p-2 img-option" [ngStyle]="imgSrc"></div>
+        <!-- <div class="p-2 img-option"  [ngStyle]="{ 'background-image': url('assets/giraffe-image.jpg') }"></div> -->
         <!-- <div class="p-2 img-option"  [style.background-image]="animals.image"></div> -->
     </div>
 </div>
+
+
+</form>
