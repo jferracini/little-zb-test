@@ -1,0 +1,74 @@
+<div class="d-flex justify-content-between">
+
+    <div class="form-donate my-5">
+        <h2 class="text-uppercase">Make a Donation</h2>
+
+        <form class="text-left" [formGroup]="form">
+
+            <div class="form-group row p-5">
+
+              <label for="inputSelect" class="col-md-3 col-sm-12 col-form-label">I want to help</label>
+
+              <div class="col-md-9 col-sm-12">
+                
+                    <select class="form-control select-lg" formControlName="animal">
+                        <option *ngFor="let animal of animals" [ngValue]="animal">{{animal.name}}</option>
+                    </select>
+              </div>
+
+              <p>Selected Animal: {{animal?.name}}</p>
+
+              <label for="inputDonate" class="col-sm-12 col-form-label mt-4">I want to donate:</label>
+
+              <div class="col-sm-12">
+
+                  <ul class="list-inline">
+                      <li class="list-inline-item">
+                        <button type="button" class="btn btn-custom-toogle mr-2" data-toggle="button" aria-pressed="false" autocomplete="off">
+                          £3
+                        </button>
+                      </li>
+                      <li class="list-inline-item">
+                        <button type="button" class="btn btn-custom-toogle mr-2" data-toggle="button" aria-pressed="false" autocomplete="off">
+                        £5
+                        </button>
+                      </li>
+                      <li class="list-inline-item">
+                        <button type="button" class="btn btn-custom-toogle mr-2" data-toggle="button" aria-pressed="false" autocomplete="off">
+                        £10
+                        </button>
+                      </li>
+                      <li class="list-inline-item">
+                          <span class="pl-2 w-100">or</span>
+                      </li>
+                      <li class="list-inline-item float-right">
+                          <input class="form-control input-donate" type="text" placeholder="£11" aria-label="My donate!">
+                      </li>
+                  </ul>
+    
+              </div>
+
+              <div class="col-sm-12 pt-5">
+                  <input class="mr-3" type="checkbox" value="option1">
+                  <label class="form-check-label" for="inlineCheckbox1">I Want to do a monthly donation</label>
+              </div>
+
+              <div class="col-sm-12 pt-5">
+                  <button class="btn btn-success my-2 my-sm-0" type="submit">Donate Now</button>
+
+              </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="p-0 bd-highlight d-flex flex-row-reverse">
+        <!-- <img  class="img-option p-2" src="assets/giraffe-image.jpg"> -->
+
+        <div class="p-2 img-option"  [ngStyle]="allBg()"></div>
+        <!-- <div class="p-2 img-option"  [ngStyle]="{'background-image': 'url(assets/'+ animals.name +')'}"></div> -->
+        <!-- <div class="p-2 img-option"  [style.background-image]="animals.image"></div> -->
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<header>
+    <nav class="justify-content-center fixed-top navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+                <!-- <svg src="assets/lts-logo-dark.svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg> -->
+                <img src="assets/lts-logo-dark.svg" alt="Little Zebra Foundation">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">What We Do</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Get Involved</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">News</a>
+                    </li>
+                </ul>
+
+                <form class="form-inline my-2 my-lg-0" [formGroup]="searchGroup">
+                    <div class="search">
+                        <input class="form-control mr-sm-4 mt-sm-2 fa-input" type="text" placeholder="&#xf002; Search here " aria-label="Search">
+                    </div>
+
+                    <button class="btn btn-success my-2 my-sm-0" type="submit">Donate Now</button>
+
+                </form>
+            </div>
+        </div>
+    </nav>
+</header>

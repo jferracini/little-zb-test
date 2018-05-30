@@ -1,0 +1,120 @@
+/* Vendor Styles */
+
+/* Themming - Guideline color */
+
+$off-white:    #f4f4f4;
+$lb-green:     #6db620;
+$lb-yellow:    #fec01e;
+$lb-dark-grey: #474c55;
+
+h1 { font-size: 2.0875rem }
+h2 { font-size: 1.45rem }
+h3 { font-size: 1.25rem }
+
+/* Layout - General classes */
+
+
+body {
+    font-family: "Open sans",Helvetica,Arial,sans-serif;
+    padding-top: 80px;
+    background: $off-white;
+    color: $lb-dark-grey;
+    main.container {
+        padding: 60px 15px 0;
+    }
+}
+
+nav.navbar {
+    height: 110px;
+    .container {
+        padding: 25px 0 35px 0;
+    }
+}
+
+.content {
+    padding: 3rem 1.5rem;
+}
+
+.img-option {
+    width:200px; 
+    height:550px; 
+    background-position:center;
+}
+
+/* Forms - custom */ 
+
+.form-control {
+    border-radius: 0;
+    background-color: #fff;
+    border-color: $lb-dark-grey;
+    border: solid 2px;
+}
+
+
+.search input {
+    width: 300px !important;
+    position:relative;
+    transition:.3s;
+    font-family: FontAwesome, Arial, Helvetica, sans-serif;
+}
+
+.form-donate {
+    width: 100%;
+    margin: 0 auto;
+    h2 {
+        color: $lb-green;
+    }
+}
+
+.input-donate {
+    width: 250px;
+    display: block;
+    position: relative; 
+}
+
+/* Buttons - custom */
+
+.btn {
+    border: 0;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    padding: 6px 20px 6px 20px;
+}
+
+.btn-success {
+    background-color: $lb-green;
+    box-shadow: 0px 5px 0px #538918;
+}
+.btn-success:hover {
+    background-color: #538918;
+}
+.btn-dark {
+    background-color: $lb-dark-grey;
+    box-shadow: 0px 5px 0px #303339;
+}
+.btn-dark:hover {
+    background-color: #303339;
+}
+.btn-primary {
+    background-color: $lb-yellow;
+    box-shadow: 0px 5px 0px #e8a801;
+}
+.btn-primary:hover {
+    background-color: #e8a801;
+}
+
+.btn-custom-toogle {
+    background-color: white;
+    border: solid 1px $lb-dark-grey;
+    height: 40px;
+    border: solid 2px;
+    
+}
+
+/* Utilities */
+
+.nopadding {
+    padding: 0;
+    margin: 0;
+ }
