@@ -26,6 +26,8 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
+### I was not worried about performing the unit test as it would take a bit of refactory.
+
 ## This project was developed with
 
 
