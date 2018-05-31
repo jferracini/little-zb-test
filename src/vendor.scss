@@ -197,3 +197,24 @@ input[type="currency"]:focus,
   padding: 0;
   margin: 0;
 }
+
+/* Media Querie test */
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.0875rem
+  }
+  
+  h2 {
+    font-size: 1.15rem
+  }
+
+  .img-option {
+    display: none;
+  }
+
+  .description {
+    padding: 40px;
+  }
+
+}

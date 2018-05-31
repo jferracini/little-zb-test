@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-between">
+<div class="d-flex align-content-start">
   <div class="form-donate mt-5">
     <h2 class="text-uppercase">Make a Donation</h2>
     <form class="text-left" [formGroup]="form">
@@ -12,7 +12,45 @@
         </div>
         <label for="inputDonate" class="col-sm-12 col-form-label mt-4">I want to donate:</label>
         <div class="col-sm-12">
-          <ul class="list-inline">
+
+          <div class="d-block d-sm-none">
+
+            <ul class="list-inline text-center">
+              <li class="list-inline-item p-1">
+                <button type="button" class="btn btn-custom-toogle" data-toggle="button" aria-pressed="false" autocomplete="off">
+                  £3
+                </button>
+              </li>
+              <li class="list-inline-item p-1">
+                <button type="button" class="btn btn-custom-toogle" data-toggle="button" aria-pressed="false" autocomplete="off">
+                  £5
+                </button>
+              </li>
+              <li class="list-inline-item p-1">
+                <button type="button" class="btn btn-custom-toogle" data-toggle="button" aria-pressed="false" autocomplete="off">
+                  £10
+                </button>
+              </li>
+            </ul>
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <span class="pl-2 w-100">or</span>
+              </li>
+            </ul>
+            <div class="form-group input-group-prepend">
+              <span class="input-group-text" id="basic-addon1" [ngClass]="{'has-error animated fadeIn' : inputDonate.invalid}">£</span>
+              <input type="currency" (keypress)="onlyNumberKey($event)" class="form-control input-donate w-100" formControlName="inputDonate"
+                value="11 or more..." placeholder="11 or more..." aria-label="My donate!" [ngClass]="{'has-error animated fadeIn' : inputDonate.invalid}">
+
+            </div>
+            <div class="form-control-feedback text-danger" *ngIf="inputDonate.invalid && inputDonate.dirty">
+              <small>Oops... Only £ 11 or more ...</small>
+            </div>
+
+          </div>
+
+          <!-- if desktop -->
+          <ul class="list-inline d-none d-sm-none d-md-block">
             <li class="list-inline-item">
               <button type="button" class="btn btn-custom-toogle mr-2" data-toggle="button" aria-pressed="false" autocomplete="off">
                 £3
@@ -34,8 +72,8 @@
             <li class="list-inline-item float-right">
               <div class="form-group input-group-prepend">
                 <span class="input-group-text" id="basic-addon1" [ngClass]="{'has-error animated fadeIn' : inputDonate.invalid}">£</span>
-                <input type="currency" (keypress)="onlyNumberKey($event)" class="form-control input-donate" formControlName="inputDonate" value="11 or more..." placeholder="11 or more..."
-                  aria-label="My donate!" [ngClass]="{'has-error animated fadeIn' : inputDonate.invalid}">
+                <input type="currency" (keypress)="onlyNumberKey($event)" class="form-control input-donate" formControlName="inputDonate"
+                  value="11 or more..." placeholder="11 or more..." aria-label="My donate!" [ngClass]="{'has-error animated fadeIn' : inputDonate.invalid}">
 
               </div>
               <div class="form-control-feedback text-danger" *ngIf="inputDonate.invalid && inputDonate.dirty">
