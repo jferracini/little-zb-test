@@ -33,6 +33,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
   - Angular with Angular CLI 6.0.5
 
   ![Project test for](https://github.com/jferracini/little-zb-test/blob/master/src/assets/powered/angular.png"Little Zebra Foundation")
+  
   ![Project test for](https://github.com/jferracini/little-zb-test/blob/master/src/assets/powered/cli.png"Little Zebra Foundation")
-  ![Project test for](https://github.com/jferracini/little-zb-test/blob/master/src/assets/powered/Bootrap4.pngg"Little Zebra Foundation")
+
+  ![Project test for](https://github.com/jferracini/little-zb-test/blob/master/src/assets/powered/Bootrap4.png"Little Zebra Foundation")
+
   ![Project test for](https://github.com/jferracini/little-zb-test/blob/master/src/assets/powered/nodejs-new-pantone-black.png "Little Zebra Foundation")
