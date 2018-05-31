@@ -1,6 +1,6 @@
 import {BrowserModule, DomSanitizer} from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -9,6 +9,10 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./app-widget-donation.component.css']
 })
 export class AppWidgetDonationComponent implements OnInit {
+
+  inputDonate: FormControl;
+  form: FormGroup;
+  donateTextValue = '£';
 
   imgSrc = {'background-image': 'url(\'assets/giraffe-image.jpg\')'};
   name = 'Widget Donate';
@@ -19,7 +23,23 @@ export class AppWidgetDonationComponent implements OnInit {
        {id: 3, value: 'tiger', name: 'A tiger'},
      ];
 
-  form: FormGroup;
+  ngOnInit() {
+    this.createFormControls();
+    this.createForm();
+  }
+
+  createFormControls() {
+    this.inputDonate = new FormControl('', [
+      // tslint:disable-next-line:max-line-length
+      Validators.pattern('0*(1[1-9]|[2-9][0-9]|[1-8][0-9]{2}|9[0-8][0-9]|99[0-9]|[1-8][0-9]{3}|9[0-8][0-9]{2}|99[0-8][0-9]|999[0-9]|[1-8][0-9]{4}|9[0-8][0-9]{3}|99[0-8][0-9]{2}|999[0-8][0-9]|9999[0-9]|[1-8][0-9]{5}|9[0-8][0-9]{4}|99[0-8][0-9]{3}|999[0-8][0-9]{2}|9999[0-8][0-9]|99999[0-9]|[1-8][0-9]{6}|9[0-8][0-9]{5}|99[0-8][0-9]{4}|999[0-8][0-9]{3}|9999[0-8][0-9]{2}|99999[0-8][0-9]|999999[0-9]|[1-8][0-9]{7}|9[0-8][0-9]{6}|99[0-8][0-9]{5}|999[0-8][0-9]{4}|9999[0-8][0-9]{3}|99999[0-8][0-9]{2}|999999[0-8][0-9]|9999999[0-9]|[1-8][0-9]{8}|9[0-8][0-9]{7}|99[0-8][0-9]{6}|999[0-8][0-9]{5}|9999[0-8][0-9]{4}|99999[0-8][0-9]{3}|999999[0-8][0-9]{2}|9999999[0-8][0-9]|99999999[0-9])')
+    ]);
+  }
+
+  createForm() {
+    this.form = new FormGroup({
+      inputDonate: this.inputDonate,
+    });
+  }
 
   constructor() {
     this.form = new FormGroup({
@@ -27,16 +47,8 @@ export class AppWidgetDonationComponent implements OnInit {
     });
   }
 
-
-  get animal(): string {
-    return this.form ? this.form.get('animal').value : '';
-  }
-
-  ngOnInit() {
-  }
-
   public changeImg(value) {
-    console.log(value);
+    // console.log(value);
     if (value === '1') {
       this.imgSrc = {
         'background-image': 'url(\'assets/giraffe-image.jpg\')',

@@ -5,7 +5,7 @@
       <div class="form-group row p-5">
         <label for="inputSelect" class="col-md-3 col-sm-12 col-form-label">I want to help</label>
         <div class="col-md-9 col-sm-12">
-          <select class="form-control select-lg select-animal" formControlName="animal" (change)="changeImg($event.target.value)">
+          <select class="form-control select-lg select-animal" (change)="changeImg($event.target.value)">
             <option [selected]="true" disabled>Choose...</option>
             <option *ngFor="let animal of animals; let i = index" [value]="animal.id">{{animal.name}}</option>
           </select>
@@ -32,7 +32,23 @@
               <span class="pl-2 w-100">or</span>
             </li>
             <li class="list-inline-item float-right">
-              <input id="custom" name="" class="form-control input-donate" type="text" placeholder="£" aria-label="My donate!">
+              <div class="form-group input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1" [ngClass]="{'has-error animated fadeIn' : inputDonate.invalid}">£</span>
+                <input 
+                        type="currency"
+                        class="form-control input-donate"
+                        formControlName="inputDonate"
+                        value="11 or more..."
+                        placeholder="11 or more..." 
+                        aria-label="My donate!"
+                        [ngClass]="{'has-error animated fadeIn' : inputDonate.invalid}"
+                        >
+                
+              </div>
+              <div class="form-control-feedback text-danger" 
+                     *ngIf="inputDonate.invalid && inputDonate.dirty"> 
+                  <small>Oops... Only £ 11 or more ...</small>
+                </div>
             </li>
           </ul>
         </div>
