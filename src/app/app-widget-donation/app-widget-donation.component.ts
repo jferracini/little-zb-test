@@ -12,7 +12,14 @@ export class AppWidgetDonationComponent implements OnInit {
 
   inputDonate: FormControl;
   form: FormGroup;
-  donateTextValue = '£';
+
+  donateTextValue:string = '';
+  
+  clearCustom() {
+    console.log ('clear');
+    this.donateTextValue = ' ';
+  }
+
 
   imgSrc = {'background-image': 'url(\'assets/giraffe-image.jpg\')'};
   name = 'Widget Donate';
