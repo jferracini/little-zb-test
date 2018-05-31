@@ -36,8 +36,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
   - Angular with Angular CLI 6.0.5
 
   ![Project test for](https://github.com/jferracini/little-zb-test/blob/master/src/assets/powered/angular.png "Angular")
-  
-  ![Project test for](https://github.com/jferracini/little-zb-test/blob/master/src/assets/powered/cli.png "Little Angular CLI")
 
   - NodeJS with NPM
 
