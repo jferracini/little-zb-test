@@ -5,7 +5,7 @@
       <div class="form-group row p-5">
         <label for="inputSelect" class="col-md-3 col-sm-12 col-form-label">I want to help</label>
         <div class="col-md-9 col-sm-12">
-          <select class="form-control select-lg" formControlName="animal" (change)="changeImg($event.target.value)">
+          <select class="form-control select-lg select-animal" formControlName="animal" (change)="changeImg($event.target.value)">
             <option [selected]="true" disabled>Choose...</option>
             <option *ngFor="let animal of animals; let i = index" [value]="animal.id">{{animal.name}}</option>
           </select>
