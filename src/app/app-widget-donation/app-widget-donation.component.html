@@ -33,22 +33,14 @@
             </li>
             <li class="list-inline-item float-right">
               <div class="form-group input-group-prepend">
-                      <span class="input-group-text" id="basic-addon1" [ngClass]="{'has-error animated fadeIn' : inputDonate.invalid}">£</span>
-                <input 
-                        type="currency"
-                        class="form-control input-donate"
-                        formControlName="inputDonate"
-                        value="11 or more..."
-                        placeholder="11 or more..." 
-                        aria-label="My donate!"
-                        [ngClass]="{'has-error animated fadeIn' : inputDonate.invalid}"
-                        >
-                
+                <span class="input-group-text" id="basic-addon1" [ngClass]="{'has-error animated fadeIn' : inputDonate.invalid}">£</span>
+                <input type="currency" (keypress)="onlyNumberKey($event)" class="form-control input-donate" formControlName="inputDonate" value="11 or more..." placeholder="11 or more..."
+                  aria-label="My donate!" [ngClass]="{'has-error animated fadeIn' : inputDonate.invalid}">
+
               </div>
-              <div class="form-control-feedback text-danger" 
-                     *ngIf="inputDonate.invalid && inputDonate.dirty"> 
-                  <small>Oops... Only £ 11 or more ...</small>
-                </div>
+              <div class="form-control-feedback text-danger" *ngIf="inputDonate.invalid && inputDonate.dirty">
+                <small>Oops... Only £ 11 or more ...</small>
+              </div>
             </li>
           </ul>
         </div>
@@ -63,6 +55,6 @@
     </form>
   </div>
   <div class="p-0 bd-highlight d-flex flex-row-reverse">
-    <div class="p-2 img-option animated flash" [ngStyle]="imgSrc"></div>
+    <div class="p-2 img-option animated fadeIn" [ngStyle]="imgSrc"></div>
   </div>
 </div>

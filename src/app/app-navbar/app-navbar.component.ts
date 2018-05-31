@@ -17,6 +17,8 @@ export class AppNavbarComponent implements OnInit {
     });
    }
 
+   public navbarCollapsed = true;
+
   ngOnInit() {
   }
 

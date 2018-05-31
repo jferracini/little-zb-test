@@ -41,6 +41,19 @@ export class AppWidgetDonationComponent implements OnInit {
     });
   }
 
+  onlyNumberKey(event) {
+    return (event.charCode === 8 || event.charCode === 0) ? null : event.charCode >= 48 && event.charCode <= 57;
+  }
+
+  onlyDecimalNumberKey(event) {
+    const charCode = (event.which) ? event.which : event.keyCode;
+    if (charCode !== 46 && charCode > 31 &&
+      (charCode < 48 || charCode > 57)) {
+      return false;
+    }
+    return true;
+  }
+
   constructor() {
     this.form = new FormGroup({
       animal: new FormControl(null)
