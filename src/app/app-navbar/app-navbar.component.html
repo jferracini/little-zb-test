@@ -1,39 +1,44 @@
 <header>
-  <nav class="justify-content-center fixed-top navbar navbar-expand-lg navbar-light bg-white animated slideInDown">
+  <nav class="justify-content-end d-inline fixed-top navbar navbar-toggleable-sm navbar-expand-lg navbar-light bg-white animated slideInDown">
     <div class="container">
       <a href="#" class="navbar-brand d-flex align-items-center">
-        <!-- <svg src="assets/lts-logo-dark.svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg> -->
         <img src="assets/lts-logo-dark.svg" alt="Little Zebra Foundation">
       </a>
-      <button class="navbar-toggler" type="button" (click)="navbarCollapsed = !navbarCollapsed" [attr.aria-expanded]="!navbarCollapsed"
-        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa fa-bars"></i>
       </button>
-      <div class="collapse navbar-collapse" [ngbCollapse]="navbarCollapsed" id="navbarSupportedContent">
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
         <ul class="navbar-nav mr-auto">
-
-          <li class="nav-item">
+          <li class="nav-item d-block d-sm-none">
+              <div class="search mt-2 mb-2 d-flex p-2">
+                  <input class="form-control mr-sm-4 mt-sm-2 fa-input" type="search" placeholder="&#xf002; Search here " aria-label="Search">
+                </div>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['active']">
             <a class="nav-link" href="#">What We Do</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" [routerLinkActive]="['']">
             <a class="nav-link" href="#">Get Involved</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" [routerLinkActive]="['']">
             <a class="nav-link" href="#">Shop</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" [routerLinkActive]="['']">
             <a class="nav-link" href="#">News</a>
           </li>
         </ul>
 
-        <form class="form-inline my-2 my-lg-0" [formGroup]="searchGroup">
-          <div class="search">
+        <form class="form-inline my-2 my-lg-0">
+          <div class="search d-none d-sm-none d-md-block">
             <input class="form-control mr-sm-4 mt-sm-2 fa-input" type="search" placeholder="&#xf002; Search here " aria-label="Search">
           </div>
 
-          <button class="btn btn-success my-2 my-sm-0" type="submit">Donate Now</button>
-
+          <button class="btn btn-success my-2 my-sm-0 d-none d-sm-none d-md-block" type="submit">Donate Now</button>
+          <!-- block if SM -->
+          <button class="btn btn-success my-2 my-sm-0 d-block d-sm-none btn-block" type="submit">Donate Now</button>
+          
         </form>
 
       </div>

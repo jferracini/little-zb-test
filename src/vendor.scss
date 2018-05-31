@@ -43,9 +43,11 @@ body {
 
 nav.navbar {
   height: 110px;
-  .container {
-    padding: 25px 0 35px 0;
-  }
+}
+
+.navbar-collapse {
+    background: white !important;
+    padding: 20px;
 }
 
 footer {

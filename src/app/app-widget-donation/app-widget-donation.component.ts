@@ -1,6 +1,6 @@
 import {BrowserModule, DomSanitizer} from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormArray, FormBuilder, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 
 
 @Component({
