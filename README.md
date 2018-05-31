@@ -1,6 +1,6 @@
 # LittleZebra
 
-![Project test for](https://github.com/jferracini/little-zb-test/blob/master/src/assets/giraffe-image.jpg "Description goes here")
+![Project test for](https://github.com/jferracini/little-zb-test/blob/master/src/assets/lts-logo-dark.png "Little Zebra Foundation")
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
 
