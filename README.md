@@ -1,6 +1,6 @@
 # LittleZebra
 
-![Project test for](assets/lts-logo-dark.svg "Description goes here")
+![Project test for](assets/leopard-image.png "Description goes here")
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
 
