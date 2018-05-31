@@ -1,5 +1,6 @@
 # LittleZebra
-[![Project test for](assets/lts-logo-dark.svg)](https://github.com/jferracini/little-zb-test)
+
+![Project test for](assets/lts-logo-dark.svg "Description goes here")
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
 
