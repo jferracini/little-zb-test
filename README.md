@@ -4,17 +4,21 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
 
-## First steps
- 
-Clone project `git clone https://github.com/jferracini/little-zb-test`
+## First steps (4 steps)
+
+1. Open Terminal 
+
+2. Clone project `$ git clone https://github.com/jferracini/little-zb-test`
+
+3. Navigate to directory  `$ cd little-zb-test`
 
 and
 
-Open Terminal and Run `npm install`
+4. Run `$ npm install`
 
 ## Development server
 
-Run `ng serve --open` (preferably in Google Chrome). 
+Run `$ ng serve --open` (preferably in Google Chrome). 
 
 Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
