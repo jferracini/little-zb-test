@@ -34,11 +34,6 @@ export class AppWidgetDonationComponent implements OnInit {
     this.donates = donate;
   }
 
-  // clearCustom() {
-  //   console.log ('clear');
-  //   this.donate = ' ';
-  // }
-
   clearDefault(event) {
     console.log('focused');
     const element = document.querySelectorAll('label.btn.btnop');
