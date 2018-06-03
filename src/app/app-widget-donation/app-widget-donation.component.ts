@@ -1,7 +1,6 @@
-import {BrowserModule, DomSanitizer} from '@angular/platform-browser';
+import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormArray, FormBuilder, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
-
+import { FormGroup, FormArray, FormControlName,  FormBuilder, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-widget-donation',
@@ -10,25 +9,44 @@ import { FormGroup, FormArray, FormBuilder, FormControl, Validators, ReactiveFor
 })
 export class AppWidgetDonationComponent implements OnInit {
 
+  donate: string;
   inputDonate: FormControl;
   form: FormGroup;
 
-  donateTextValue:string = '';
-  
-  clearCustom() {
-    console.log ('clear');
-    this.donateTextValue = ' ';
-  }
-
+  donateTextValue = '';
 
   imgSrc = {'background-image': 'url(\'assets/giraffe-image.jpg\')'};
   name = 'Widget Donate';
 
   animals = [
-       {id: 1, value: 'giraffe' , name: 'A giraffe'},
-       {id: 2, value: 'rhino', name: 'A rhino'},
-       {id: 3, value: 'tiger', name: 'A tiger'},
-     ];
+    {id: 1, value: 'giraffe' , name: 'A giraffe'},
+    {id: 2, value: 'rhino', name: 'A rhino'},
+    {id: 3, value: 'tiger', name: 'A tiger'},
+  ];
+
+  donates = [
+      { id: 4, display: '£3', value: '£3',  checked: false },
+      { id: 5, display: '£5', value: '£5', checked: false },
+      { id: 6, display: '£10', value: '£10', checked: false }
+  ];
+
+  onSelectionChange(donate) {
+    this.donates = donate;
+  }
+
+  // clearCustom() {
+  //   console.log ('clear');
+  //   this.donate = ' ';
+  // }
+
+  clearDefault(event) {
+    console.log('focused');
+    const element = document.querySelectorAll('label.btn.btnop');
+    [].forEach.call(element, function(el) {
+      el.classList.remove('active');
+    });
+  }
+
 
   ngOnInit() {
     this.createFormControls();
@@ -61,12 +79,6 @@ export class AppWidgetDonationComponent implements OnInit {
     return true;
   }
 
-  constructor() {
-    this.form = new FormGroup({
-      animal: new FormControl(null)
-    });
-  }
-
   public changeImg(value) {
     // console.log(value);
     if (value === '1') {
@@ -82,6 +94,12 @@ export class AppWidgetDonationComponent implements OnInit {
         'background-image': 'url(\'assets/tiger-image.jpg\')',
       };
     }
+  }
+
+  constructor() {
+    this.form = new FormGroup({
+      animal: new FormControl(null)
+    });
   }
 
 }

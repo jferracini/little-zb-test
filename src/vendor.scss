@@ -182,9 +182,10 @@ input[type="currency"]:focus,
   width: 70px;
   border: solid 2px;
   font-size: 18px;
+  line-height: 2em;
 }
 
-.btn:focus, .btn.focus, .btn-custom-toogle:focus, .btn-custom-toogle:active  {
+.btn:focus, .btn.focus, .btn-custom-toogle:focus, .btn-custom-toogle:active, label.btn-custom-toogle.btn-custom-toogle.active   {
   background-color: $lb-green;
   border: solid 1px $lb-green;
   color: white;

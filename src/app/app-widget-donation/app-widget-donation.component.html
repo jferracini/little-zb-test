@@ -17,30 +17,19 @@
           <div class="d-none d-sm-none d-md-block">
             <ul class="list-inline">
               <li class="list-inline-item">
-                <button type="button" (click)="resetCustom.value=''" class="btn btn-custom-toogle mr-2" data-toggle="button" aria-pressed="false"
-                  autocomplete="off">
-                  £3
-                </button>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label #clearDefault *ngFor="let donate of donates" class="btn btn-custom-toogle mr-3 btnop" (click)="resetCustom.value=''">
+                    <input type="radio" name="donate" [value]="donate.value" (change)="onSelectionChange(donate)" aria-checked="true"> {{ donate.display }}
+                  </label>
+                </div>
               </li>
               <li class="list-inline-item">
-                <button type="button" (click)="resetCustom.value=''" class="btn btn-custom-toogle mr-2" data-toggle="button" aria-pressed="false"
-                  autocomplete="off">
-                  £5
-                </button>
-              </li>
-              <li class="list-inline-item">
-                <button type="button" (click)="resetCustom.value=''" class="btn btn-custom-toogle mr-2" data-toggle="button" aria-pressed="false"
-                  autocomplete="off">
-                  £10
-                </button>
-              </li>
-              <li class="list-inline-item">
-                <span class="pl-2 w-100">or</span>
+                <span class="text-center w-100">or</span>
               </li>
               <li class="list-inline-item float-right">
                 <div class="form-group input-group-prepend">
                   <span class="input-group-text" id="basic-addon1" [ngClass]="{'has-error animated fadeIn' : inputDonate.invalid}">£</span>
-                  <input #resetCustom type="currency" (keypress)="onlyNumberKey($event)" class="form-control input-donate" formControlName="inputDonate"
+                  <input #resetCustom type="currency" (focus)="clearDefault($event)" (keypress)="onlyNumberKey($event)" class="form-control input-donate" formControlName="inputDonate"
                     value="11 or more..." [value]="donateTextValue" placeholder="11 or more..." aria-label="My donate!" [ngClass]="{'has-error animated fadeIn' : inputDonate.invalid}"
                     maxlength="9">
                 </div>
@@ -58,22 +47,11 @@
 
             <ul class="list-inline text-center">
               <li class="list-inline-item p-1">
-                <button (click)="resetMobile.value=''" type="button" class="btn btn-custom-toogle" data-toggle="button" aria-pressed="false"
-                  autocomplete="off">
-                  £3
-                </button>
-              </li>
-              <li class="list-inline-item p-1">
-                <button (click)="resetMobile.value=''" type="button" class="btn btn-custom-toogle" data-toggle="button" aria-pressed="false"
-                  autocomplete="off">
-                  £5
-                </button>
-              </li>
-              <li class="list-inline-item p-1">
-                <button (click)="resetMobile.value=''" type="button" class="btn btn-custom-toogle" data-toggle="button" aria-pressed="false"
-                  autocomplete="off">
-                  £10
-                </button>
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                      <label #clearDefault *ngFor="let donate of donates" class="btn btn-custom-toogle mr-3 btnop" (click)="resetMobile.value=''">
+                        <input type="radio" name="donate" [value]="donate.value" (change)="onSelectionChange(donate)" aria-checked="true"> {{ donate.display }}
+                      </label>
+                    </div>
               </li>
             </ul>
             <ul class="list-inline text-center">
@@ -83,7 +61,7 @@
             </ul>
             <div class="form-group input-group-prepend">
               <span class="input-group-text" id="basic-addon1" [ngClass]="{'has-error animated fadeIn' : inputDonate.invalid}">£</span>
-              <input #resetMobile type="currency" (keypress)="onlyNumberKey($event)" class="form-control input-donate w-100" formControlName="inputDonate"
+              <input #resetMobile type="currency" (focus)="clearDefault($event)" (keypress)="onlyNumberKey($event)" class="form-control input-donate w-100" formControlName="inputDonate"
                 value="11 or more..." [value]="donateTextValue" placeholder="11 or more..." aria-label="My donate!" [ngClass]="{'has-error animated fadeIn' : inputDonate.invalid}"
                 maxlength="9">
 
@@ -96,7 +74,7 @@
 
         </div>
         <div class="col-sm-12 pt-5">
-          <input class="mr-3" type="checkbox" value="option1">
+          <input class="mr-3" type="checkbox" value="option4">
           <label class="form-check-label" for="inlineCheckbox1">I Want to do a monthly donation</label>
         </div>
         <div class="col-sm-12 pt-5">
