@@ -6,11 +6,11 @@ import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppContentComponent } from './app-content/app-content.component';
 import { AppDescriptionComponent } from './app-description/app-description.component';
 import { AppFooterComponent } from './app-footer/app-footer.component';
 import { AppWidgetDonationComponent } from './app-widget-donation/app-widget-donation.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
