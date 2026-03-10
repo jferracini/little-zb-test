@@ -28,11 +28,11 @@ jobs:
       - name: Build Angular App
         run: npm run build
 
-      - name: Upload Build Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: little-zebra-dist
-          path: dist/little-zebra
+      - name: Prepare Vercel Build Output
+        run: |
+          mkdir -p .vercel/output/static
+          cp -R dist/little-zebra/. .vercel/output/static/
+          printf '{ "version": 3 }\n' > .vercel/output/config.json
 
       - name: Setup Node 20 For Vercel CLI
         uses: actions/setup-node@v4
@@ -46,4 +46,4 @@ jobs:
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy Prebuilt Static Files
-        run: vercel deploy --prod --yes --token=${{ secrets.VERCEL_TOKEN }} ./dist/little-zebra
+        run: vercel deploy --prebuilt --prod --yes --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
