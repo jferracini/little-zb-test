@@ -38,6 +38,23 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
+## Vercel deploy
+
+Vercel's Git-based build currently runs on a modern Node version and is not compatible with this Angular 6 toolchain.
+
+This repository includes a GitHub Actions workflow that builds with Node 10 and deploys the generated `dist/little-zebra` folder to Vercel using the CLI.
+
+Required GitHub repository secrets:
+
+- `VERCEL_TOKEN`
+- `VERCEL_ORG_ID`
+- `VERCEL_PROJECT_ID`
+
+Important:
+
+- Disable Vercel's automatic Git deployment for this repository, otherwise Vercel will keep trying to build the source code with Node 20+ and fail.
+- Keep using the GitHub Actions workflow as the deployment path for production.
+
 
 ## This project was developed with
 
