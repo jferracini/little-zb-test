@@ -4,6 +4,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
 
+## Runtime
+
+This is an old Angular 6 project and should be used with Node 10 and npm 6.
+
+If you use `nvm`, run `nvm use` before installing dependencies.
+
 ## First steps (4 steps)
 
 1. Open Terminal 
